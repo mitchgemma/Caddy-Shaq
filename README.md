@@ -4,7 +4,7 @@
 
 ## App Description
 
-Users will be able to use the app to add their favorite golf courses and track how well they shot during their recent rounds. They will be able to make an account which will allow them to customize their courses and recent rounds. Users will be able to add courses to their index page, and once the course is created, they will be able to add information to that course such as the date they played, score they shot, and any additional details. A public api will be used to fetch what the course par is and post it to the course page (a maybe a picture for the course?).
+Users will be able to use the app to add their favorite golf courses and track how well they shot during their recent rounds. They will be able to make an account which will allow them to customize their courses and recent rounds. Users will be able to add courses to their index page, and once the course is created, they will be able to add information to that course such as the date they played, score they shot, and any additional details. Seeded data will be used as a replacement for the public API.
 
 ### App Requirements:
 
@@ -14,6 +14,7 @@ Users will be able to use the app to add their favorite golf courses and track h
 - On each course page, users will be able to document recent rounds they have played at that course
 - Users will be able to track multiple rounds on the same course show page, and be able to make edits and deletions
 - Users will have the option to remove courses from their index page, or remove specific rounds from the show page
+- 
 
 ### Stretch Goals:
 
@@ -21,6 +22,7 @@ Users will be able to use the app to add their favorite golf courses and track h
     - Drop down menu for each date that includes each hole
 - Make the app interactive, such as sharing when other users added a new round and allowing other users to comment on the post, similar to social media
 - Users will be able to select additional details to show on their display page, such as hole distances
+- Use a weather API to include the weather in the location of the golf course
 
 
 ### Technologies:
@@ -32,9 +34,13 @@ Users will be able to use the app to add their favorite golf courses and track h
 - Express
 - Liquid
 
+### ERD
+- 
+![ERD Image](https://i.imgur.com/KkqejDv.jpg)
+
 ![Index Page](https://i.imgur.com/D42jIFa.jpg)
 
-![Show Page](https://i.imgur.com/N841ILm.jpg)
+![Show Page](https://i.imgur.com/zpnmlN6.jpg)
 
 ![Add Course](https://i.imgur.com/rsJDWkV.jpg)
 
