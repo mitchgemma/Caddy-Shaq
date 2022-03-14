@@ -34,7 +34,7 @@ Users will be able to use the app to add their favorite golf courses and track h
 - Liquid
 
 ### ERD
-![ERD Image](https://i.imgur.com/KkqejDv.jpg)
+![ERD Image](https://i.imgur.com/awx66x8.jpg)
 
 ### Wireframes
 ![Home Page](https://i.imgur.com/PQO3tVE.jpg)
