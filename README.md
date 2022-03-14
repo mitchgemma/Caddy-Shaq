@@ -12,9 +12,8 @@ Users will be able to use the app to add their favorite golf courses and track h
 - There will be a nav bar for easy navigation throughout the apps' pages
 - Index page will look like a grid and will display the courses name, a picture of the course, and the course par
 - On each course page, users will be able to document recent rounds they have played at that course
-- Users will be able to track multiple rounds on the same course show page, and be able to make edits and deletions
+- Users will be able to track multiple rounds on the same course show page, and be able to make edits and deletions for each round
 - Users will have the option to remove courses from their index page, or remove specific rounds from the show page
-- 
 
 ### Stretch Goals:
 
@@ -35,9 +34,9 @@ Users will be able to use the app to add their favorite golf courses and track h
 - Liquid
 
 ### ERD
-- 
 ![ERD Image](https://i.imgur.com/KkqejDv.jpg)
 
+### Wireframes
 ![Index Page](https://i.imgur.com/D42jIFa.jpg)
 
 ![Show Page](https://i.imgur.com/zpnmlN6.jpg)
