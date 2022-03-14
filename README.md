@@ -37,6 +37,8 @@ Users will be able to use the app to add their favorite golf courses and track h
 ![ERD Image](https://i.imgur.com/KkqejDv.jpg)
 
 ### Wireframes
+![Home Page](https://i.imgur.com/PQO3tVE.jpg)
+
 ![Index Page](https://i.imgur.com/D42jIFa.jpg)
 
 ![Show Page](https://i.imgur.com/zpnmlN6.jpg)
