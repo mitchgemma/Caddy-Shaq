@@ -22,7 +22,7 @@ middleware(app)
 ////////////////////
 
 app.use('/auth', UserRouter)
-// app.use('/course', CourseRouter)
+app.use('/courses', CourseRouter)
 
 app.get('/', (req, res) => {
     const { username, userId, loggedIn } = req.session

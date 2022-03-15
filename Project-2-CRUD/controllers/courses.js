@@ -52,7 +52,7 @@ router.get('/', (req, res) => {
 			const username = req.session.username
 			const loggedIn = req.session.loggedIn
 			// console.log(fruits)
-			res.render('courses/index', { fruits, username, loggedIn })
+			res.render('courses/index', { courses, username, loggedIn })
         })
         // redirect to the error page if there is one
 		.catch(error => {
