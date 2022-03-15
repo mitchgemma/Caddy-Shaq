@@ -31,16 +31,34 @@ router.use((req, res, next) => {
 
 // index ALL courses route
 router.get('/', (req, res) => {
-	// find the fruits
+	// find the courses
 	Courses.find({})
 		// then render a template AFTER they're found
 		.then((courses) => {
 			const username = req.session.username
 			const loggedIn = req.session.loggedIn
-			// console.log(fruits)
 			res.render('courses/index', { courses, username, loggedIn })
         })
         // redirect to the error page if there is one
+		.catch(error => {
+			res.redirect(`/error?error=${error}`)
+		})
+})
+
+// show route
+router.get('/:id', (req, res) => {
+	// first, we need to get the id
+	const courseId = req.params.id
+	// then we can find a course by its id
+	Courses.findById(courseId)
+		// once found, we can render a view with the data
+		.then((course) => {
+			const username = req.session.username
+			const loggedIn = req.session.loggedIn
+			const userId = req.session.userId
+			res.render('courses/show', { course, username, loggedIn, userId })
+		})
+		// if there is an error, show that instead
 		.catch(error => {
 			res.redirect(`/error?error=${error}`)
 		})
