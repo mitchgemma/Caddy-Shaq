@@ -2,5 +2,27 @@
 {% block content %}
 
 <h1>Welcome to Index!</h1>
+<div>
+    <h2 class="display-6">All Courses</h2>
+    <div class="row">
+        {% for course in courses %}
+        <div class="card" style="width: 18rem;">
+            <h5 class="card-header">{{ course.name }}</h5>
+            <div class="card-body">
+                <h5 class="card-title">
+                    Location: {{ course.location }}
+                </h5>
+                <img src="{{ course.img }}" alt="{{ course.name }}">
 
+                <p class="card-text">
+                    Par: {{ course.par }}
+                </p>
+                <a href="/examples/{{ example.id }}" class="btn btn-info">
+                    View {{ example.title }}
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}
