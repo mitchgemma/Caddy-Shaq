@@ -45,6 +45,14 @@ router.get('/', (req, res) => {
 		})
 })
 
+// new route -> GET route that renders our page with the form
+router.get('/new', (req, res) => {
+	const username = req.session.username
+    const loggedIn = req.session.loggedIn
+    // render the new course page
+	res.render('courses/new', { username, loggedIn })
+})
+
 // show route
 router.get('/:id', (req, res) => {
 	// first, we need to get the id
