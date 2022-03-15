@@ -44,7 +44,7 @@ db.on('open', () => {
             location: 'Newport, RI',
         },
         {
-            name: 'Newport National Golf Club',
+            name: 'Whistling Straits',
             par: 72,
             image: 'https://i.imgur.com/CBShsVr.png',
             location: 'Newport, RI',
@@ -52,8 +52,8 @@ db.on('open', () => {
         {
             name: 'Pine Valley Golf Club',
             par: 70,
-            image: 'https://imgur.com/1671b80c-509b-4977-8e0a-0d7d8db0cec9',
-            location: 'Pine Valley, NJ',
+            image: 'https://i.imgur.com/yRYOayt.png',
+            location: 'Sheboygan, WI',
         },
         {
             name: 'Merion Golf Club',
@@ -64,7 +64,7 @@ db.on('open', () => {
         {
             name: 'Winged Foot Golf Club',
             par: 72,
-            image: 'blob:https://imgur.com/2d35214c-ee3a-4042-b465-b2dd4896d462',
+            image: 'https://i.imgur.com/Ue4XRfd.png',
             location: 'Mamoroneck, NY',
         },
         {

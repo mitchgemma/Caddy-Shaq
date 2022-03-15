@@ -1,9 +1,8 @@
 {% layout "layout.liquid" %}
 {% block content %}
 
-<h1>Welcome to Index!</h1>
 <div>
-    <h2 class="display-6">All Courses</h2>
+    <h2 class="display-6">All Golf Courses</h2>
     <div class="row">
         {% for course in courses %}
         <div class="card" style="width: 18rem;">
@@ -12,8 +11,7 @@
                 <h5 class="card-title">
                     Location: {{ course.location }}
                 </h5>
-                <img src="{{ course.img }}" alt="{{ course.name }}">
-
+                <img src="{{ course.image }}" class="img-thumbnail" alt="{{ course.name }}">
                 <p class="card-text">
                     Par: {{ course.par }}
                 </p>
