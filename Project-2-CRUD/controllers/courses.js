@@ -82,6 +82,22 @@ router.get('/:id/edit', (req, res) => {
 		})
 })
 
+// update route -> sends a put request to our database
+router.put('/:id', (req, res) => {
+	// get the id
+	const courseId = req.params.id
+	// tell mongoose to update the fruit
+	Courses.findByIdAndUpdate(courseId, req.body, { new: true })
+		// if successful -> redirect to the course page
+		.then((course) => {
+
+			res.redirect(`/courses/${course.id}`)
+		})
+		.catch((error) => {
+			res.redirect(`/error?error=${error}`)
+		})
+})
+
 // show route
 router.get('/:id', (req, res) => {
 	// first, we need to get the id
