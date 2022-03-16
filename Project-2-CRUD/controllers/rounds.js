@@ -50,6 +50,7 @@ router.post('/:courseId', (req, res) => {
         })
 })
 
+// delete -> to delete a round
 
 
 
