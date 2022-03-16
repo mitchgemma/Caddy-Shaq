@@ -1,0 +1,44 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+<div class="container-sm">
+        <form action="/courses" method="POST">
+            <fieldset>
+                <legend>Create New Golf Course</legend>
+                <label class="form-label">Course name: </label>
+                    <input 
+                        type="text" 
+                        name="name"
+                        placeholder="enter course name"
+                        class="form-control"
+                    >
+                <label class="form-label">Par:</label>
+                    <input 
+                        type="number" 
+                        name="par" 
+                        placeholder="enter course par"
+                        class="form-control"
+                    >
+                    <label class="form-label">Picture:</label>
+                    <input 
+                    type="text" 
+                    name="img"
+                    placeholder="Enter image URL"
+                    class="form-control"
+                    >
+                    <label class="form-label">Par:</label>
+                        <input 
+                            type="text" 
+                            name="location" 
+                            placeholder="enter golf course city and state"
+                            class="form-control"
+                        >
+            </fieldset>
+            <input 
+                type="submit" 
+                value="Create New Course"
+                class="btn btn-success"
+            >
+        </form>
+    </div>
+
+{% endblock %}
