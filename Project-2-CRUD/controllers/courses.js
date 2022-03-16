@@ -45,13 +45,12 @@ router.get('/', (req, res) => {
 		})
 })
 
-// index that shows only the user's fruits
+// index that shows only the user's courses
 router.get('/mine', (req, res) => {
-	// find the fruits
+	// find the coursess
 	Courses.find({ owner: req.session.userId })
 		// then render a template AFTER they're found
 		.then((courses) => {
-			// console.log(fruits)
 			const username = req.session.username
 			const loggedIn = req.session.loggedIn
 
@@ -105,7 +104,7 @@ router.get('/:id/edit', (req, res) => {
 router.put('/:id', (req, res) => {
 	// get the id
 	const courseId = req.params.id
-	// tell mongoose to update the fruit
+	// tell mongoose to update the course
 	Courses.findByIdAndUpdate(courseId, req.body, { new: true })
 		// if successful -> redirect to the course page
 		.then((course) => {
@@ -122,7 +121,8 @@ router.get('/:id', (req, res) => {
 	// first, we need to get the id
 	const courseId = req.params.id
 	// then we can find a course by its id
-	Courses.findById(courseId)
+    Courses.findById(courseId)
+        .populate('rounds.owner')
 		// once found, we can render a view with the data
 		.then((course) => {
 			const username = req.session.username

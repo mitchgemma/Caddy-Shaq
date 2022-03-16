@@ -5,6 +5,7 @@ const mongoose = require('./connection')
 
 // we'll import our user model so we can populate the info
 const User = require('./user')
+// need to import the roundSchema
 const roundsSchema = require('./rounds')
 
 /////////////////////////////////////////////////

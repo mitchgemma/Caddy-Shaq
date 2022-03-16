@@ -30,8 +30,20 @@
                 <input type="text" name="details" placeholder="enter any details you wish">
             </fieldset>
             
-            <input type="text" class="btn btn-success" value="Add Round">
+            <input type="submit" class="btn btn-success" value="Add Round">
         </form>
     </div>
+    {% if course.rounds.length > 0%}
+            <!-- here we'll add our round container -->
+            <div class="container-sm justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <!-- here we need to loop over the rounds -->
+                    <!-- for every round render a round.liquid block -->
+                    {% for round in course.rounds %}
+                        {% render '../rounds.liquid', round: round, userId: userId, course: course %}
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
 </div>
 {% endblock %}

@@ -26,11 +26,36 @@ router.use((req, res, next) => {
 /////////////////////////////////////////////////
 // Routes
 /////////////////////////////////////////////////
-
-router.get('/', (req, res) => {
-	// find the fruits
-	res.render("./rounds")
+// POST -> to create a round
+router.post('/:courseId', (req, res) => {
+    const courseId = req.params.courseId
+    console.log('first round body', req.body)
+    
+    // we'll find the round with the roundId
+    Courses.findById(courseId)
+        .then(course => {
+            // then we'll send req.body to the rounds array
+            course.rounds.push(req.body)
+            // save the course
+            return course.save()
+        })
+        .then(course => {
+            // redirect
+            res.redirect(`/courses/${course.id}`)
+        })
+        // or show an error if we have one
+        .catch(error => {
+            console.log(error)
+            res.send(error)
+        })
 })
+
+
+
+
+
+
+
 
 // Export the Router
 module.exports = router
