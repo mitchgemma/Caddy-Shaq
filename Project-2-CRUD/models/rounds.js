@@ -13,22 +13,22 @@ const User = require('./user')
 const { Schema, model } = mongoose
 
 // make the course schema
-const courseSchema = new Schema({
-    name: { type: String },
-    par: { type: Number },
-    image: { type: String },
-    location: { type: String },
+const roundsSchema = new Schema({
+    date: { type: String },
+    score: { type: Number },
+    details: { type: String },
     owner: {
         // references the type 'objectId'
-			type: Schema.Types.ObjectID,
-			ref: 'User',
-		}
+        type: Schema.Types.ObjectID,
+        // references the model: 'User'
+        ref: 'User'
+    }
 })
 
 // make our course model
-const Course = model('courses', courseSchema)
+const Rounds = model('rounds', roundsSchema)
 
 /////////////////////////////////////////////////
 // export our model
 /////////////////////////////////////////////////
-module.exports = Course
+module.exports = Rounds

@@ -65,10 +65,10 @@ router.post('/login', async (req, res) => {
 					req.session.username = user.username
 					req.session.loggedIn = true
 					req.session.userId = user.id
-
+					
+					console.log('session user id', req.session.userId)
           			const { username, loggedIn, userId } = req.session
 
-					console.log('session user id', req.session.userId)
 					// redirect to /courses if login is successful
 					res.redirect('/')
 				} else {

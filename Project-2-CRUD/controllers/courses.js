@@ -5,7 +5,7 @@ const express = require('express')
 const Courses = require('../models/courses')
 
 /////////////////////////////////////////////////
-// import dependencies
+// Create router
 /////////////////////////////////////////////////
 const router = express.Router()
 
@@ -42,6 +42,25 @@ router.get('/', (req, res) => {
         // redirect to the error page if there is one
 		.catch(error => {
 			res.redirect(`/error?error=${error}`)
+		})
+})
+
+// index that shows only the user's fruits
+router.get('/mine', (req, res) => {
+	// find the fruits
+	Courses.find({ owner: req.session.userId })
+		// then render a template AFTER they're found
+		.then((courses) => {
+			// console.log(fruits)
+			const username = req.session.username
+			const loggedIn = req.session.loggedIn
+
+			res.render('courses/index', { courses, username, loggedIn })
+		})
+		// show an error if there is one
+		.catch((error) => {
+			console.log(error)
+			res.json({ error })
 		})
 })
 
