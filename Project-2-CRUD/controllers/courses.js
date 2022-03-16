@@ -53,6 +53,19 @@ router.get('/new', (req, res) => {
 	res.render('courses/new', { username, loggedIn })
 })
 
+// create -> POST route that actually calls the db and makes a new document
+router.post('/', (req, res) => {
+	req.body.owner = req.session.userId
+	Courses.create(req.body)
+		.then(course => {
+			console.log('this was returned from create', course)
+			res.redirect('/courses')
+		})
+		.catch(error => {
+			res.redirect(`/error?error=${error}`)
+		})
+})
+
 // show route
 router.get('/:id', (req, res) => {
 	// first, we need to get the id
