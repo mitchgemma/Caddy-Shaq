@@ -117,5 +117,17 @@ router.get('/:id', (req, res) => {
 		})
 })
 
+// delete route
+router.delete('/:id', (req, res) => {
+	const courseId = req.params.id
+	Courses.findByIdAndRemove(courseId)
+		.then(course => {
+			res.redirect('/courses')
+		})
+		.catch(error => {
+			res.redirect(`/error?error=${error}`)
+		})
+})
+
 // Export the Router
 module.exports = router
