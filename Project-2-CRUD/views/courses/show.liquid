@@ -8,7 +8,7 @@
         </h2>
         <h3>Location: {{ course.location }}</h3>
         <h6> Par: {{ course.par }}</h6>
-        <img src="{{ course.image }}" alt="{{ course.name }}">
+        <img class="rounded mx-auto d-block" src="{{ course.image }}" alt="{{ course.name }}">
         {% if course.owner == userId  %}
         <div class="btn-group">
             <a href="/courses/{{ course.id }}/edit" class="btn btn-primary">Edit</a>
@@ -23,19 +23,18 @@
             <fieldset>
                 <legend>Add Round</legend>
                 <div class="row">
-
                     <div class="mb-3 col">
                         <label class="form-label">Date:</label>
-                        <input type="text" name="date" placeholder="enter date here">
+                        <input type="text" name="date" class = "form-control" placeholder="enter date here">
                     </div>
                     <div class="mb-3 col">
                         <label class="form-label">Score:</label>
-                        <input type="text" name="score" placeholder="enter score here">
+                        <input type="text" name="score" class = "form-control" placeholder="enter score here">
                     </div>
                 </div>
                 <div class="mb-3">
                 <label class="form-label">Details:</label>
-                <input type="text" name="details" placeholder="enter any details you wish">
+                <input type="text" name="details" class = "form-control"placeholder="enter any details you wish">
                 </div>
             </fieldset>
             

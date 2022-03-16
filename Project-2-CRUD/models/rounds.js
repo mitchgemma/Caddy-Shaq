@@ -17,6 +17,7 @@ const roundsSchema = new mongoose.Schema({
     details: { type: String },
     owner: {
         // references the type 'objectId'
+        // trying to make it so that comments can BE DELETED BY the owner and cannot get it to happen
 		type: mongoose.Schema.Types.ObjectID,
         ref: 'User'
     }
