@@ -1,0 +1,44 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+<div class="container-sm">
+        <form action="/courses" method="POST">
+            <fieldset>
+                <legend>Edit Golf Course</legend>
+                <label class="form-label">Course name: </label>
+                    <input 
+                        type="text" 
+                        name="name"
+                        value="{{ course.name }}"
+                        class="form-control"
+                    >
+                <label class="form-label">Par:</label>
+                    <input 
+                        type="number" 
+                        name="par" 
+                        value="{{ course.par }}"
+                        class="form-control"
+                    >
+                    <label class="form-label">Picture:</label>
+                    <input 
+                    type="text" 
+                    name="image"
+                    value="{{ course.image }}"
+                    class="form-control"
+                    >
+                    <label class="form-label">Location:</label>
+                        <input 
+                            type="text" 
+                            name="location" 
+                            value="{{ course.location }}"
+                            class="form-control"
+                        >
+            </fieldset>
+            <input 
+                type="submit" 
+                value="Edit"
+                class="btn btn-success"
+            >
+        </form>
+    </div>
+
+{% endblock %}

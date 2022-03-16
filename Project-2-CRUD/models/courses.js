@@ -17,7 +17,7 @@ const courseSchema = new Schema({
     name: { type: String },
     par: { type: Number },
     image: { type: String },
-    location: { type: String }
+    location: { type: String },
 })
 
 // make our course model

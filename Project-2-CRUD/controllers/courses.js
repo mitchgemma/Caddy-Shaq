@@ -66,6 +66,22 @@ router.post('/', (req, res) => {
 		})
 })
 
+// edit route -> GET that takes us to the edit form view
+router.get('/:id/edit', (req, res) => {
+	// we need to get the id
+    const courseId = req.params.id
+    // find the course to edit
+	Courses.findById(courseId)
+        .then(course => {
+            const username = req.session.username
+			const loggedIn = req.session.loggedIn
+			res.render('courses/edit', { course, username, loggedIn })
+		})
+		.catch((error) => {
+			res.redirect(`/error?error=${error}`)
+		})
+})
+
 // show route
 router.get('/:id', (req, res) => {
 	// first, we need to get the id
