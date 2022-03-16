@@ -18,5 +18,20 @@
         </div>
     {% endif %}
     </article>
+    <div class="col-md-6">
+        <form action="/rounds/{{ course.id }}" method="POST">
+            <fieldset>
+                <legend>Add Round</legend>
+                <label class="form-label">Date:</label>
+                <input type="text" name="date" placeholder="enter date here">
+                <label class="form-label">Score:</label>
+                <input type="text" name="score" placeholder="enter score here">
+                <label class="form-label">Details:</label>
+                <input type="text" name="details" placeholder="enter any details you wish">
+            </fieldset>
+            
+            <input type="text" class="btn btn-success" value="Add Round">
+        </form>
+    </div>
 </div>
 {% endblock %}

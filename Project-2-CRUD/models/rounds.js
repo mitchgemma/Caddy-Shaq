@@ -25,10 +25,8 @@ const roundsSchema = new Schema({
     }
 })
 
-// make our course model
-const Rounds = model('rounds', roundsSchema)
 
 /////////////////////////////////////////////////
 // export our model
 /////////////////////////////////////////////////
-module.exports = Rounds
+module.exports = roundsSchema
