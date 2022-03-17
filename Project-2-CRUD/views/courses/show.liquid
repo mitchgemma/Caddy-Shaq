@@ -5,7 +5,6 @@
     <article>
         <h2>
             {{ course.name }}
-            <h1>Current temperature: {{ weather.main.temp }}</h1>
         </h2>
         <h3>Location: {{ course.location }}</h3>
         <h6> Par: {{ course.par }}</h6>
@@ -18,6 +17,11 @@
             </form>
         </div>
     {% endif %}
+    <div>
+        <h5>Current Temperature: {{ weather.main.temp | round}} °F</h5>
+        <h5>Current Wind Speeds: {{ weather.wind.speed | round }} MPH</h5>
+        <h5>Current conditions: {{ weather.weather[0].description }}</h5>
+    </div>
     </article>
     <div class="col-md-15">
         <form action="/rounds/{{ course.id }}" method="POST">
