@@ -3,6 +3,8 @@
 /////////////////////////////////////////////////
 const express = require('express')
 const Courses = require('../models/courses')
+const fetch = require('node-fetch')
+
 
 /////////////////////////////////////////////////
 // Create router
@@ -116,6 +118,25 @@ router.put('/:id', (req, res) => {
 		})
 })
 
+// get route to fetch the weather
+// router.get('/:id', (req, res) => {
+//     const courseId = req.params.id
+//     Courses.findById(courseId)
+//         .then((course) => {
+//             console.log('course data', course)
+//         })
+// })
+    // const requestURL = `https://api.openweathermap.org/data/2.5/weather?zip=${},us&units=imperial&appid=a6aacdad0768ad4abfd787d582b7b88b`
+
+//     fetch(requestURL)
+//         .then((apiResponse) => {
+//             return apiResponse.json();
+//         })
+//         .then((jsonData) => {
+//             console.log("here is the weather data", jsonData);
+//         })
+// })
+
 // show route
 router.get('/:id', (req, res) => {
 	// first, we need to get the id
@@ -127,14 +148,26 @@ router.get('/:id', (req, res) => {
 		.then((course) => {
 			const username = req.session.username
 			const loggedIn = req.session.loggedIn
-			const userId = req.session.userId
-			res.render('courses/show', { course, username, loggedIn, userId })
-		})
-		// if there is an error, show that instead
-		.catch(error => {
-			res.redirect(`/error?error=${error}`)
-		})
-})
+            const userId = req.session.userId
+            res.render('courses/show', { course, username, loggedIn, userId })
+            console.log('course data', course.zip)
+            const zip = course.zip
+                const requestURL = `https://api.openweathermap.org/data/2.5/weather?zip=${zip},us&units=imperial&appid=a6aacdad0768ad4abfd787d582b7b88b`
+                fetch(requestURL)
+                .then((apiResponse) => {
+                    return apiResponse.json();
+                })
+                .then((jsonData) => {
+                    console.log("here is the weather data", jsonData);
+                })
+
+
+        })
+        // if there is an error, show that instead
+        .catch(error => {
+            res.redirect(`/error?error=${error}`)
+        })
+    })
 
 // delete route
 router.delete('/:id', (req, res) => {

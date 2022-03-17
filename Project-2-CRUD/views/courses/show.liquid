@@ -1,14 +1,14 @@
 {% layout "layout.liquid" %}
 {% block content %}
 
-<div class="container-md">
+<div class="container-md container">
     <article>
         <h2>
             {{ course.name }}
         </h2>
         <h3>Location: {{ course.location }}</h3>
         <h6> Par: {{ course.par }}</h6>
-        <img class="rounded mx-auto d-block" src="{{ course.image }}" alt="{{ course.name }}">
+        <img class="rounded mx-auto d-block" id = 'show-img'src="{{ course.image }}" alt="{{ course.name }}">
         {% if course.owner == userId  %}
         <div class="btn-group">
             <a href="/courses/{{ course.id }}/edit" class="btn btn-primary">Edit</a>
@@ -18,10 +18,10 @@
         </div>
     {% endif %}
     </article>
-    <div class="col-md-6">
+    <div class="col-md-15">
         <form action="/rounds/{{ course.id }}" method="POST">
             <fieldset>
-                <legend>Add Round</legend>
+                <legend>Add a Round</legend>
                 <div class="row">
                     <div class="mb-3 col">
                         <label class="form-label">Date:</label>

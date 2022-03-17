@@ -21,7 +21,6 @@ middleware(app)
 ////////////////////
 //    Routes      //
 ////////////////////
-
 app.use('/auth', UserRouter)
 app.use('/courses', CourseRouter)
 app.use('/rounds', RoundsRouter)

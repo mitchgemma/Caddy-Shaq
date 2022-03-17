@@ -14,3 +14,15 @@ article {
     width: 500px;
 }
 
+.container {
+    background-color: antiquewhite;
+    width: 500px;
+    border-radius: 4%;
+}
+
+#show-img {
+    height: auto; 
+    width: auto; 
+    max-width: 300px; 
+    max-height: 300px;
+}
