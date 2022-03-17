@@ -1,11 +1,11 @@
 {% block content %}
+{% if round.owner == userId  %}
     <div class="card mb-3 shadow">
         <div class="card-body">
             <h5>Date: {{ round.date }}</h5>
             <h6>Score: {{ round.score }}</h6>
             <p>Details: {{ round.details }}</p>
             <div class="d-flex justify-content-between">
-               {% if round.owner == userId  %}
 <form action="/rounds/delete/{{ course.id }}/{{ round.id }}?_method=DELETE" method="POST">
     <input type="submit" value = "X">
 </form>

@@ -54,7 +54,6 @@ router.post('/:courseId', (req, res) => {
 router.delete('/delete/:courseId/:roundId', (req, res) => {
     const courseId = req.params.courseId
     const roundId = req.params.roundId
-    console.log('this is the round ID:' , roundId)
     // need to first find the course
     Courses.findById(courseId)
     .then(course => {
