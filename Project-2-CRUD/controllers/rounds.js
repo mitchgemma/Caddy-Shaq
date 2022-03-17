@@ -51,7 +51,29 @@ router.post('/:courseId', (req, res) => {
 })
 
 // delete -> to delete a round
-
+router.delete('/delete/:courseId/:roundId', (req, res) => {
+    const courseId = req.params.courseId
+    const roundId = req.params.roundId
+    console.log('this is the round ID:' , roundId)
+    // need to first find the course
+    Courses.findById(courseId)
+    .then(course => {
+        const myRound = course.rounds.id(roundId)
+        //only delete the round if the owner created the round
+            if (myRound.owner == req.session.userId) {
+                myRound.remove()
+                return course.save()
+            } else {
+                return
+            }
+        })
+        .then(course => {
+            res.redirect(`/courses/${course.id}`)
+        })
+        .catch(error => {
+			res.redirect(`/error?error=${error}`)
+		})
+})
 
 
 
