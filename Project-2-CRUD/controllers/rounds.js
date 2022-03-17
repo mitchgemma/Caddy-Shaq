@@ -29,8 +29,8 @@ router.use((req, res, next) => {
 // POST -> to create a round
 router.post('/:courseId', (req, res) => {
     const courseId = req.params.courseId
-    console.log('first round body', req.body)
-    
+    req.body.owner = req.session.userId
+    console.log('updated comment body', req.body)
     // we'll find the round with the roundId
     Courses.findById(courseId)
         .then(course => {
