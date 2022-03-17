@@ -1,9 +1,14 @@
 {% layout "layout.liquid" %}
 {% block content %}
-<h1 class="display-4">Welcome To Caddy Shaq</h1>
-    <div class="btn-group btn-group-lg">
-        <a href="/auth/signup" class="btn btn-success">Sign Up</a>
-        <a href="/auth/login" class="btn btn-success">Login</a>
+<div class="container-md">
+
+    <h1 class="display-4">Welcome To Caddy Shaq!</h1>
+    <h3>Once you sign up you will be able to add all of your favorite golf courses, check on the current weather
+        conditions at your courses, and keep track of when you played, how you scored, and any more details you want to document.</h3>
+        <div class="btn-lg">
+            <a href="/auth/signup" class="btn btn-success m-3">Sign Up</a>
+            <a href="/auth/login" class="btn btn-success m-3">Login</a>
+        </div>
     </div>
 
 {% endblock %}

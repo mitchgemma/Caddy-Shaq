@@ -1,26 +1,39 @@
+<!-- <div class="card m-3" style="width: 18rem;">
+    <h5 class="card-header">{{ course.name }}</h5>
+    <div class="card-body">
+        <h5 class="card-title">
+            Location: {{ course.location }}
+        </h5>
+        <img src="{{ course.image }}" class="img-thumbnail" alt="{{ course.name }}">
+        <p class="card-text">
+            Par: {{ course.par }}
+        </p>
+        <a href="/courses/{{ course.id }}" class="btn btn-light">
+            View {{ course.name }}
+        </a>
+    </div> -->
+
+
 {% layout "layout.liquid" %}
 {% block content %}
 
-<div class="ms-5" >
+
     <h2 class="display-6">All Golf Courses</h2>
     <div class="row">
-        {% for course in courses %}
+    {% for course in courses %}
+
         <div class="card m-3" style="width: 18rem;">
-            <h5 class="card-header">{{ course.name }}</h5>
+            <img src="{{ course.image }}" class="card-img-top" alt="{{ course.name }}">
             <div class="card-body">
-                <h5 class="card-title">
-                    Location: {{ course.location }}
-                </h5>
-                <img src="{{ course.image }}" class="img-thumbnail" alt="{{ course.name }}">
-                <p class="card-text">
-                    Par: {{ course.par }}
-                </p>
-                <a href="/courses/{{ course.id }}" class="btn btn-light">
-                    View {{ course.name }}
-                </a>
-            </div>
+            <h5 class="card-title">{{ course.name }}</h5>
+            <p class="card-text"> Location: {{ course.location }}</p>
+            <a href="/courses/{{ course.id }}" class="btn btn-light">
+            View {{ course.name }}
+            </a>
         </div>
-        {% endfor %}
-    </div>
+
 </div>
+{% endfor %}
+</div>
+
 {% endblock %}
