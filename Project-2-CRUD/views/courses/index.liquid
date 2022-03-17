@@ -1,4 +1,35 @@
-<!-- <div class="card m-3" style="width: 18rem;">
+{% layout "layout.liquid" %}
+{% block content %}
+<div class="ms-5" >
+    <h2 class="display-6">All Golf Courses</h2>
+    <div class="row">
+        {% for course in courses %}
+        <div class="card m-3" style="width: 18rem;">
+            <h5 class="card-header">{{ course.name }}</h5>
+            <div class="card-body">
+                <h5 class="card-title">
+                    Location: {{ course.location }}
+                </h5>
+                <img src="{{ course.image }}" class="img-thumbnail" alt="{{ course.name }}">
+                <p class="card-text">
+                    Par: {{ course.par }}
+                </p>
+                <a href="/courses/{{ course.id }}" class="btn btn-light">
+                    View {{ course.name }}
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+
+
+<!-- alternate card layout -->
+<!-- {% layout "layout.liquid" %}
+{% block content %}
+<div class="card m-3" style="width: 18rem;">
     <h5 class="card-header">{{ course.name }}</h5>
     <div class="card-body">
         <h5 class="card-title">
@@ -11,14 +42,10 @@
         <a href="/courses/{{ course.id }}" class="btn btn-light">
             View {{ course.name }}
         </a>
-    </div> -->
+    </div>
 
 
-{% layout "layout.liquid" %}
-{% block content %}
-
-
-    <h2 class="display-6">All Golf Courses</h2>
+    <!-- <h2 class="display-6">All Golf Courses</h2>
     <div class="row">
     {% for course in courses %}
 
@@ -32,8 +59,8 @@
             </a>
         </div>
 
-</div>
-{% endfor %}
+</div> -->
+<!-- {% endfor %}
 </div>
 
-{% endblock %}
+{% endblock %} --> 
