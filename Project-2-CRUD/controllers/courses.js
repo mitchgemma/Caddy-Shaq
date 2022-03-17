@@ -149,19 +149,20 @@ router.get('/:id', (req, res) => {
 			const username = req.session.username
 			const loggedIn = req.session.loggedIn
             const userId = req.session.userId
-            res.render('courses/show', { course, username, loggedIn, userId })
             console.log('course data', course.zip)
+            // assign the course zip code to a variable
             const zip = course.zip
-                const requestURL = `https://api.openweathermap.org/data/2.5/weather?zip=${zip},us&units=imperial&appid=a6aacdad0768ad4abfd787d582b7b88b`
-                fetch(requestURL)
-                .then((apiResponse) => {
-                    return apiResponse.json();
+            // URL to get the data from - put zip in the link to be replaced by each course
+            const requestURL = `https://api.openweathermap.org/data/2.5/weather?zip=${zip},us&units=imperial&appid=a6aacdad0768ad4abfd787d582b7b88b`
+            fetch(requestURL)
+            .then((apiResponse) => {
+                return apiResponse.json();
+            })
+            .then((jsonData) => {
+                console.log("here is the weather data", jsonData);
+                const weather = jsonData
+                res.render('courses/show', { course, username, loggedIn, userId, weather })   
                 })
-                .then((jsonData) => {
-                    console.log("here is the weather data", jsonData);
-                })
-
-
         })
         // if there is an error, show that instead
         .catch(error => {

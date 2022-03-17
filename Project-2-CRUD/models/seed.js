@@ -48,7 +48,6 @@ db.on('open', () => {
             image: 'https://i.imgur.com/CBShsVr.png',
             location: 'Newport, RI',
             zip: '02840'
-
         },
         {
             name: 'Whistling Straits',
@@ -84,7 +83,7 @@ db.on('open', () => {
             image: 'https://i.imgur.com/Q2HnCND.png',
             location: 'Juno Beach, FL',
             zip: '33408'
-        },
+        }
     ]
     // need to delete all of the data that already exists
     Courses.remove({})

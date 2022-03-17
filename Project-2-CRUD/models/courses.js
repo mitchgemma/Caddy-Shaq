@@ -20,7 +20,7 @@ const courseSchema = new Schema({
     par: { type: Number },
     image: { type: String },
     location: { type: String },
-    zip: { type: Number },
+    zip: { type: String },
     owner: {
         // references the type 'objectId'
 			type: Schema.Types.ObjectID,
