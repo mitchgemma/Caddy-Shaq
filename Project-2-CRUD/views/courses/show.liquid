@@ -17,6 +17,12 @@
             </form>
         </div>
     {% endif %}
+        {% if course.owner != userId  %}
+        <div class="btn-group">
+            <a href="/courses/{{ course.id }}/edit" class="btn btn-danger">Add to My Courses</a>
+            </form>
+        </div>
+    {% endif %}
     <div>
         <h5>Current Temperature: {{ weather.main.temp | round}} °F</h5>
         <h5>Current Wind Speeds: {{ weather.wind.speed | round }} MPH</h5>
