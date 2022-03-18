@@ -17,12 +17,6 @@
             </form>
         </div>
     {% endif %}
-        {% if course.owner != userId  %}
-        <div class="btn-group">
-            <a href="/courses/{{ course.id }}/edit" class="btn btn-danger">Add to My Courses</a>
-            </form>
-        </div>
-    {% endif %}
     <div>
         <h5>Current Temperature: {{ weather.main.temp | round}} °F</h5>
         <h5>Current Wind Speeds: {{ weather.wind.speed | round }} MPH</h5>
@@ -44,8 +38,8 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                <label class="form-label">Details:</label>
-                <input type="text" name="details" class = "form-control"placeholder="enter any details about the round">
+                    <label class="form-label">Details:</label>
+                    <input type="text" name="details" class = "form-control"placeholder="enter any details about the round">
                 </div>
             </fieldset>
             
@@ -55,11 +49,11 @@
     {% if course.rounds.length > 0%}
             <!-- here we'll add our round container -->
             <div class="container-sm justify-content-center">
-                <div class="col-md-8 col-lg-6">
+                <div class="col-md col-lg">
                     <!-- here we need to loop over the rounds -->
                     <!-- for every round render a round.liquid block -->
                     {% for round in course.rounds %}
-                        {% render '../rounds.liquid', round: round, userId: userId, course: course %}
+                        {% render '../rounds/rounds.liquid', round: round, userId: userId, course: course %}
                     {% endfor %}
                 </div>
             </div>

@@ -1,0 +1,37 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+<div class="container-sm">
+        <form action="/rounds/{{ course.id }}/{{ round.id }}?_method=PUT" method="POST">
+            <fieldset>
+                <legend>Edit Round</legend>
+                <label class="form-label">Date: </label>
+                    <input 
+                        type="text" 
+                        name="date"
+                        value="{{ course.rounds[0].date }}"
+                        class="form-control"
+                    >
+                <label class="form-label">Par:</label>
+                    <input 
+                        type="number" 
+                        name="score" 
+                        value="{{ course.rounds[0].score }}"
+                        class="form-control"
+                    >
+                    <label class="form-label">Details:</label>
+                    <input 
+                    type="text" 
+                    name="details"
+                    value="{{ course.rounds[0].details }}"
+                    class="form-control"
+                    >
+            </fieldset>
+            <input 
+                type="submit" 
+                value="Edit Round"
+                class="btn btn-success"
+            >
+        </form>
+    </div>
+
+{% endblock %}
