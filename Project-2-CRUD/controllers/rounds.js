@@ -51,16 +51,19 @@ router.post('/:courseId', (req, res) => {
 })
 
 // edit route -> to edit a round
-router.get('/:courseId/:roundId/edit', (req, res) => {
+router.get('/edit/:courseId/:roundId', (req, res) => {
 	// we need to get the id
     const courseId = req.params.courseId
+    const roundId = req.params.roundId
 	Courses.findById(courseId)
         .then(course => {
-            const username = req.session.username
-			const loggedIn = req.session.loggedIn
-            res.render('rounds/edit', { course, username, loggedIn })
-            // console.log('this is what was sent to edit', course)
+            const myRound = course.rounds.id(roundId)
             console.log('this is what was sent to edit', course)
+            console.log('here is our round', myRound)
+            const username = req.session.username
+            const loggedIn = req.session.loggedIn
+            // render routes edit page
+            res.render('rounds/edit', { myRound, username, loggedIn })
 		})
 		.catch((error) => {
 			res.redirect(`/error?error=${error}`)
