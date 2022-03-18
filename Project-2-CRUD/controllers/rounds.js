@@ -54,13 +54,28 @@ router.post('/:courseId', (req, res) => {
 router.get('/:courseId/:roundId/edit', (req, res) => {
 	// we need to get the id
     const courseId = req.params.courseId
-    const roundId = req.params.roundId
 	Courses.findById(courseId)
         .then(course => {
             const username = req.session.username
 			const loggedIn = req.session.loggedIn
             res.render('rounds/edit', { course, username, loggedIn })
+            // console.log('this is what was sent to edit', course)
             console.log('this is what was sent to edit', course)
+		})
+		.catch((error) => {
+			res.redirect(`/error?error=${error}`)
+		})
+})
+
+// update route -> sends a put request to our database
+router.put('/:courseId/:roundId', (req, res) => {
+// get course id
+    const courseId = req.params.courseId
+    const roundId = req.params.roundId  
+// tell mongoose to update the course
+    Courses.findByIdAndUpdate(courseId, req.body, { new: true })
+         .then((course) => {
+            res.redirect(`/courses/${course.id}`)
 		})
 		.catch((error) => {
 			res.redirect(`/error?error=${error}`)
