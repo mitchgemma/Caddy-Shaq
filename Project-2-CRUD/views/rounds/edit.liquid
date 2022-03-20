@@ -1,14 +1,14 @@
 {% layout 'layout.liquid' %}
 {% block content %}
 <div class="container-sm">
-    <form action="/courses/{{ course.id }}/{{ round.id }}?_method=PUT" method="POST">
+    <form action="/courses/{{ course.id }}?_method=PUT" method="POST">
         <fieldset>
             <legend>Edit Round</legend>
                 <label class="form-label">Date: </label>
                     <input 
                         type="text" 
                         name="date"
-                        value="{{myRound.date }}"
+                        value="{{ myRound.date }}"
                         class="form-control"
                     >
                 <label class="form-label">Score:</label>

@@ -55,26 +55,45 @@ router.get('/edit/:courseId/:roundId', (req, res) => {
 	// we need to get the id
     const courseId = req.params.courseId
     const roundId = req.params.roundId
+    console.log('not the id we want round id', roundId)
 	Courses.findById(courseId)
         .then(course => {
             const myRound = course.rounds.id(roundId)
-            console.log('this is what was sent to edit', course)
+            // console.log('this is what was sent to edit', course)
             console.log('here is our round', myRound)
             const username = req.session.username
             const loggedIn = req.session.loggedIn
             // render routes edit page
-            res.render('rounds/edit', { myRound, username, loggedIn })
+            res.render('rounds/edit', { myRound, course, username, loggedIn })
 		})
 		.catch((error) => {
-			res.redirect(`/error?error=${error}`)
+            res.redirect(`/error?error=${error}`)
 		})
-})
+    })
+    
+    // // update route -> sends a put request to our database
+    // router.put('/:courseId/:roundId', (req, res) => {
+    //     // get course id
+    //     const courseId = req.params.courseId
+    //     const roundId = req.params.roundId
+    //     const myRound = course.rounds.id(roundId)
+    //     // tell mongoose to update the course
+    //     Courses.findByIdAndUpdate(myRound, req.body, { new: true })
+    //         .then((course) => {
+    //         console.log("let's redirect")
+    //         res.redirect(`/courses/${course.id}`)
+	// 	})
+	// 	.catch((error) => {
+	// 		res.redirect(`/error?error=${error}`)
+	// 	})
+    // })
 
-// update route -> sends a put request to our database
-router.put('/:courseId/:roundId', (req, res) => {
+    // update route -> sends a put request to our database
+router.put('/courseId/:roundId', (req, res) => {
 // get course id
     const courseId = req.params.courseId
-    const roundId = req.params.roundId  
+    const roundId = req.params.roundId
+    console.log('this is the round id', roundId)
 // tell mongoose to update the course
     Courses.findByIdAndUpdate(courseId, req.body, { new: true })
          .then((course) => {

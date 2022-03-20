@@ -130,7 +130,7 @@ router.get('/:id', (req, res) => {
 			const username = req.session.username
 			const loggedIn = req.session.loggedIn
             const userId = req.session.userId
-            console.log('course data', course.zip)
+            // console.log('course data', course.zip)
             // assign the course zip code to a variable
             const zip = course.zip
             // URL to get the data from - put zip in the link to be replaced by each course
@@ -140,7 +140,7 @@ router.get('/:id', (req, res) => {
                 return apiResponse.json();
             })
             .then((jsonData) => {
-                console.log("here is the weather data", jsonData);
+                // console.log("here is the weather data", jsonData);
                 const weather = jsonData
                 res.render('courses/show', { course, username, loggedIn, userId, weather })   
                 })
