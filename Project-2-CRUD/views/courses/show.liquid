@@ -47,11 +47,12 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Details:</label>
-                    <input type="text" name="details" class = "form-control"placeholder="enter any details about the round">
+                    <input type="text" name="details" class = "form-control mb-1"placeholder="enter any details about the round">
                 </div>
+                <div class="float-end ">
+                    <input type="submit" class="btn btn-success" value="Add Round">
+                </div> </br>
             </fieldset>
-            
-            <input type="submit" class="btn btn-success" value="Add Round">
         </form>
     </div>
     {% if course.rounds.length > 0%}
