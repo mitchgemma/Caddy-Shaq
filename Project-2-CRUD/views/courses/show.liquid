@@ -18,12 +18,12 @@
         </div>
     {% endif %}
 <p>
-  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  <button class="btn mt-2 btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWeather" aria-expanded="false" aria-controls="collapseWeather">
     Check the weather
   </button>
 </p>
-<div class="collapse" id="collapseExample">
-    <div class="card card-body"> 
+<div class="collapse" id="collapseWeather">
+    <div class="card shadow card-body" style="width: 450px;"> 
       <h5>Current Temperature: {{ weather.main.temp | round}} °F</h5>
       <h5>Current Wind Speeds: {{ weather.wind.speed | round }} MPH</h5>
       <h5>Current conditions: {{ weather.weather[0].description }}</h5>    
