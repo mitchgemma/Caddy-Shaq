@@ -17,11 +17,19 @@
             </form>
         </div>
     {% endif %}
-    <div>
-        <h5>Current Temperature: {{ weather.main.temp | round}} °F</h5>
-        <h5>Current Wind Speeds: {{ weather.wind.speed | round }} MPH</h5>
-        <h5>Current conditions: {{ weather.weather[0].description }}</h5>
+<p>
+  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Check the weather
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+    <div class="card card-body"> 
+      <h5>Current Temperature: {{ weather.main.temp | round}} °F</h5>
+      <h5>Current Wind Speeds: {{ weather.wind.speed | round }} MPH</h5>
+      <h5>Current conditions: {{ weather.weather[0].description }}</h5>    
     </div>
+</div>
+
     </article>
     <div class="col-md-15">
         <form action="/rounds/{{ course.id }}" method="POST">

@@ -14,11 +14,11 @@ db.on('open', () => {
     // array of courses
     const startCourses = [
         {
-            name: 'St. Andrews Old Course',
-            par: 72,
-            image: 'https://i.imgur.com/0m0UoD5.jpg',
-            location: 'St Andrews, Scotland',
-            zip: 'JMAAW20'
+            name: 'Sand Hills Golf Course',
+            par: 71,
+            image: 'https://i.imgur.com/zCDqxMl.png',
+            location: 'Mullen, NE',
+            zip: '69152'
         },
         {
             name: 'August National Golf Club',
