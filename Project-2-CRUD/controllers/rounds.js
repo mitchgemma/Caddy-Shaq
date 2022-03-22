@@ -70,23 +70,6 @@ router.get('/edit/:courseId/:roundId', (req, res) => {
 		})
     })
     
-    // // update route -> sends a put request to our database
-    // router.put('/:courseId/:roundId', (req, res) => {
-    //     // get course id
-    //     const courseId = req.params.courseId
-    //     const roundId = req.params.roundId
-    //     const myRound = course.rounds.id(roundId)
-    //     // tell mongoose to update the course
-    //     Courses.findByIdAndUpdate(myRound, req.body, { new: true })
-    //         .then((course) => {
-    //         console.log("let's redirect")
-    //         res.redirect(`/courses/${course.id}`)
-	// 	})
-	// 	.catch((error) => {
-	// 		res.redirect(`/error?error=${error}`)
-	// 	})
-    // })
-
     // update route -> sends a put request to our database
 router.put('/:courseId/:roundId', (req, res) => {
 // get course id

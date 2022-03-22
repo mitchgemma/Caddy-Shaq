@@ -27,7 +27,7 @@
     <div class="card shadow card-body" style="width: 450px;"> 
       <h5>Current Temperature: {{ weather.main.temp | round}} °F</h5>
       <h5>Current Wind Speeds: {{ weather.wind.speed | round }} MPH</h5>
-      <h5>Current conditions: {{ weather.weather[0].description }}</h5>    
+      <h5>Current conditions: {{ weather.weather[0].description | capitalize }}</h5>    
     </div>
 </div>
 
