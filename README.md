@@ -1,6 +1,4 @@
-# Project-2
-
-# Golf Round Tracker
+# Caddy Shaq
 
 ## App Description
 
@@ -40,12 +38,21 @@ Users will be able to use the app to add their favorite golf courses and track h
 | npm start      | Starts a development server with nodemon that automatically refreshes when you change something.       |
 | npm run seed   | Deletes the seeded data that is in the database and reseeds with only the data in the seed.js file           |
 
-### Route Table:
-| Name   | Path | Action Verb | Shows| 
+### RESTful Routes:
+| Name   | Path | Action Verb | What it does| 
 | ----------- | ----------- | ----------- | ----------- |
 | INDEX      |  /courses  | GET | Shows all golf courses|
+| SHOW | /courses/:courseid | GET | Shows all information the given golf course id|
+|CREATE | /courses/new | POST | Creates a new golf course|
+| INDEX | /courses/mine | GET | Shows golf courses only the user signed in has created
+| UPDATE | /courses/:courseid/edit | PUT | Allows edits and updates to be made to the given golf course
+| DELETE | /courses/:courseid | DELETE | Deletes the golf course |
+| CREATE | /rounds/:courseid | POST | Creates a new round to the given course
+| GET | /rounds/edit/:courseid/:roundid | GET | shows  the for to edit a round for a given golf course
+| UPDATE | /rounds/:courseid/:roundid | PUT | Updates the round for the given golf course|
+| DELETE | /rounds/delete/:courseId/:roundId | DELETE | Delete the round for a given golf course
 
-### Instructions
+### Instructions for use:
 
 ### ERD
 ![ERD Image](https://i.imgur.com/awx66x8.jpg)
