@@ -29,6 +29,7 @@ Users will be able to use the app to add their favorite golf courses and track h
 - HTML
 - CSS and Bootstrap
 - Javascript
+- Node.js
 - Mongo / Mongoose
 - Express
 - Liquid
@@ -41,7 +42,10 @@ Users will be able to use the app to add their favorite golf courses and track h
 
 ### Instructions:
 
-### 
+### Route Table:
+| Name   | Path | Action Verb | Shows| 
+| ----------- | ----------- |
+| INDEX      |  /courses  | GET | Shows all golf courses|
 
 ### ERD
 ![ERD Image](https://i.imgur.com/awx66x8.jpg)
