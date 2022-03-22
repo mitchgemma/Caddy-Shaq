@@ -37,9 +37,11 @@ Users will be able to use the app to add their favorite golf courses and track h
 | Command   | Effect |
 | ----------- | ----------- |
 | npm start      | Starts a development server with nodemon that automatically refreshes when you change something.       |
-| npm run seed   | Deletes the data that is in the database and reseeds with only the data in the seed.js file            |
+| npm run seed   | Deletes the seeded data that is in the database and reseeds with only the data in the seed.js file           |
 
+### Instructions:
 
+### 
 
 ### ERD
 ![ERD Image](https://i.imgur.com/awx66x8.jpg)
