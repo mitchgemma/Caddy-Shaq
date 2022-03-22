@@ -40,6 +40,7 @@ Users will be able to use the app to add their favorite golf courses and track h
 | Paragraph   | Text        |
 
 
+
 ### ERD
 ![ERD Image](https://i.imgur.com/awx66x8.jpg)
 
