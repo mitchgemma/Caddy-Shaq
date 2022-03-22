@@ -21,7 +21,7 @@ db.on('open', () => {
             zip: '69152'
         },
         {
-            name: 'August National Golf Club',
+            name: 'Augusta National Golf Club',
             par: 72,
             image: 'https://i.imgur.com/XdDP8kH.jpgs',
             location: 'Augusta, GA',
