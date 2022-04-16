@@ -16,11 +16,10 @@ Users will be able to use the app to add their favorite golf courses and track h
 ### Stretch Goals:
 
 - Track individual holes for each course
-    - Drop down menu for each date that includes each hole
+  - Drop down menu for each date that includes each hole
 - Make the app interactive, such as sharing when other users added a new round and allowing other users to comment on the post, similar to social media
 - Users will be able to select additional details to show on their display page, such as hole distances
 - Use a weather API to include the weather in the location of the golf course
-
 
 ### Technologies:
 
@@ -33,31 +32,42 @@ Users will be able to use the app to add their favorite golf courses and track h
 - Liquid
 
 ### Tasks:
-| Command   | Effect |
-| ----------- | ----------- |
-| npm start      | Starts a development server with nodemon that automatically refreshes when you change something.       |
-| npm run seed   | Deletes the seeded data that is in the database and reseeds with only the data in the seed.js file           |
+
+| Command      | Effect                                                                                             |
+| ------------ | -------------------------------------------------------------------------------------------------- |
+| npm start    | Starts a development server with nodemon that automatically refreshes when you change something.   |
+| npm run seed | Deletes the seeded data that is in the database and reseeds with only the data in the seed.js file |
 
 ### RESTful Routes:
-| Name   | Path | Action Verb | What it does| 
-| ----------- | ----------- | ----------- | ----------- |
-| INDEX      |  /courses  | GET | Shows all golf courses|
-| SHOW | /courses/:courseid | GET | Shows all information the given golf course id|
-|CREATE | /courses/new | POST | Creates a new golf course|
-| INDEX | /courses/mine | GET | Shows golf courses only the user signed in has created
-| UPDATE | /courses/:courseid/edit | PUT | Allows edits and updates to be made to the given golf course
-| DELETE | /courses/:courseid | DELETE | Deletes the golf course |
-| CREATE | /rounds/:courseid | POST | Creates a new round to the given course
-| GET | /rounds/edit/:courseid/:roundid | GET | shows  the for to edit a round for a given golf course
-| UPDATE | /rounds/:courseid/:roundid | PUT | Updates the round for the given golf course|
-| DELETE | /rounds/delete/:courseId/:roundId | DELETE | Delete the round for a given golf course
+
+| Name   | Path                              | Action Verb | What it does                                                 |
+| ------ | --------------------------------- | ----------- | ------------------------------------------------------------ |
+| INDEX  | /courses                          | GET         | Shows all golf courses                                       |
+| SHOW   | /courses/:courseid                | GET         | Shows all information the given golf course id               |
+| CREATE | /courses/new                      | POST        | Creates a new golf course                                    |
+| INDEX  | /courses/mine                     | GET         | Shows golf courses only the user signed in has created       |
+| UPDATE | /courses/:courseid/edit           | PUT         | Allows edits and updates to be made to the given golf course |
+| DELETE | /courses/:courseid                | DELETE      | Deletes the golf course                                      |
+| CREATE | /rounds/:courseid                 | POST        | Creates a new round to the given course                      |
+| GET    | /rounds/edit/:courseid/:roundid   | GET         | shows the for to edit a round for a given golf course        |
+| UPDATE | /rounds/:courseid/:roundid        | PUT         | Updates the round for the given golf course                  |
+| DELETE | /rounds/delete/:courseId/:roundId | DELETE      | Delete the round for a given golf course                     |
 
 ### Instructions for use:
 
+1. Fork and clone this repo
+2. Create a .env file and add the following:
+   - DATABASE_URL=mongodb://localhost/
+   - PORT=3000
+   - SECRET=addAnySecretHereAsLongAsItIsInYourENVfile
+3. Run npm install to install all the necessary node packages
+
 ### ERD
+
 ![ERD Image](https://i.imgur.com/awx66x8.jpg)
 
 ### Wireframes
+
 ![Home Page](https://i.imgur.com/PQO3tVE.jpg)
 
 ![Index Page](https://i.imgur.com/D42jIFa.jpg)
