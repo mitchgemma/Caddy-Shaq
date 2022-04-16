@@ -60,7 +60,7 @@ Users will be able to use the app to add their favorite golf courses and track h
    - DATABASE_URL=mongodb://localhost/
    - PORT=3000
    - SECRET=addAnySecretHereAsLongAsItIsInYourENVfile
-3. Run npm install to install all the necessary node packages
+3. Run npm install in your terminal to install all the necessary node packages
 
 ### ERD
 
