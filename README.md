@@ -1,5 +1,7 @@
 # Caddy Shaq
 
+# [Deployed App](https://caddyshaq.herokuapp.com/)
+
 ## App Description
 
 Users will be able to use the app to add their favorite golf courses and track how well they shot during their recent rounds. They will be able to make an account which will allow them to customize their courses and recent rounds. Users will be able to add courses to their index page, and once the course is created, they will be able to add information to that course such as the date they played, score they shot, and any additional details. Seeded data will be used as a replacement for the public API.
